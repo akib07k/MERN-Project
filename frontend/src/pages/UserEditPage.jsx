@@ -182,7 +182,7 @@ const UserEditPage = () => {
           Edit User
         </h1>
 
-        {/* 🔄 LOADING */}
+        {/*  LOADING */}
         {isLoading ? (
           <Loader />
         ) : error ? (

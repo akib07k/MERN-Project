@@ -351,7 +351,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
         url: PRODUCTS_URL,
         method: 'POST',
       }),
-      invalidatesTags: ['Products'], // 🔥 auto refresh
+      invalidatesTags: ['Products'], //  auto refresh
     }),
 
     // 🔹 UPDATE PRODUCT
@@ -370,17 +370,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
         url: `${PRODUCTS_URL}/${productId}`,
         method: 'DELETE',
       }),
-      invalidatesTags: ['Products'], // 🔥 FIXED
-    }),
-
-    // 🔹 REVIEW
-    createReview: builder.mutation({
-      query: (data) => ({
-        url: `${PRODUCTS_URL}/${data.productId}/reviews`,
-        method: 'POST',
-        body: data,
-      }),
-      invalidatesTags: ['Products'],
+      invalidatesTags: ['Products'], // FIXED
     }),
 
     // 🔹 IMAGE UPLOAD

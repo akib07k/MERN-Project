@@ -25,7 +25,7 @@ const HomePage = () => {
   ];
 
   const activeCategory_ = activeCategory !== 'All' ? activeCategory : undefined;
-  // ✅ ~line 32
+  //  ~line 32
 const { data, isLoading, error } = useGetProductsQuery({
   keyword,
   pageNumber,
@@ -159,7 +159,7 @@ const { data, isLoading, error } = useGetProductsQuery({
           </div>
         )}
 
-        {/* // ✅ ~line 122 */}
+        {/* // ~line 122 */}
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
   {isLoading ? (
     <p className="col-span-full text-center">Loading...</p>

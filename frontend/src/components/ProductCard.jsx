@@ -37,7 +37,6 @@
 // export default ProductCard;
 
 import { Link } from 'react-router-dom';
-// import Rating from './Rating';
 
 const ProductCard = ({ product }) => {
   return (

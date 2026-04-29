@@ -232,7 +232,7 @@ const ProductEditPage = () => {
     e.preventDefault();
     try {
       await updateProduct({
-        _id: productId, // ✅ FIX (IMPORTANT)
+        _id: productId, 
         name,
         price,
         image,
@@ -243,7 +243,7 @@ const ProductEditPage = () => {
       }).unwrap();
 
       toast.success('Product updated');
-      navigate('/admin'); // ✅ redirect back
+      navigate('/admin'); // redirect back
     } catch (err) {
       toast.error(err?.data?.message || err.error);
     }

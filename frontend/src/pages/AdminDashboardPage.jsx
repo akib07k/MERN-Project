@@ -253,7 +253,7 @@ const AdminDashboardPage = () => {
   const [deleteProduct] = useDeleteProductMutation();
   const [deleteUser] = useDeleteUserMutation();
 
-  // 🔥 IMPORTANT FIX: force refetch when coming back / tab change
+  // IMPORTANT FIX: force refetch when coming back / tab change
   useEffect(() => {
     if (tab === 'Products') {
       refetchProducts();
@@ -261,7 +261,7 @@ const AdminDashboardPage = () => {
   }, [tab, refetchProducts]);
 
   const createProductHandler = async () => {
-    if (!window.confirm('Create a new sample product?')) return;
+    // if (!window.confirm('Create a new sample product?')) return;
 
     try {
       const res = await createProduct().unwrap();
