@@ -37,6 +37,7 @@
 // export default ProductCard;
 
 import { Link } from 'react-router-dom';
+import Rating from './Rating';
 
 const ProductCard = ({ product }) => {
   return (
@@ -60,7 +61,7 @@ const ProductCard = ({ product }) => {
             {product.name}
           </h3>
         </Link>
-        {/* <Rating value={product.rating} text={`(${product.numReviews})`} /> */}
+        <Rating value={product.rating} text={`(${product.numReviews})`} />
         <div className="mt-3 flex items-center justify-between">
           <span className="text-xl font-bold text-indigo-600">₹{product.price}</span>
           <Link

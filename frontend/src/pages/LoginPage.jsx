@@ -90,8 +90,8 @@ const LoginPage = () => {
         </div>
 
         <div className="mt-4 p-3 bg-gray-50 rounded-lg text-xs text-gray-500">
-          <strong>Demo:</strong> admin@email.com / adminak
-          <strong>Demo:</strong> admin@email.com / adminak
+          <strong>Demo:</strong> admin@email.com / adminak<br></br>
+          <strong>Demo:</strong> user@email.com / user123
         </div>
       </div>
     </div>

@@ -125,18 +125,18 @@ const UserEditPage = () => {
 
   const navigate = useNavigate();
 
-  // 🔥 Fetch user details
+  //  Fetch user details
   const {
     data: user,
     isLoading,
     error,
   } = useGetUserDetailsQuery(userId);
 
-  // 🔥 Update mutation
+  //  Update mutation
   const [updateUser, { isLoading: loadingUpdate }] =
     useUpdateUserMutation();
 
-  // 🔥 Fill form
+  //  Fill form
   useEffect(() => {
     if (user) {
       setName(user.name || '');
@@ -145,7 +145,7 @@ const UserEditPage = () => {
     }
   }, [user]);
 
-  // 🔥 Submit handler (FIXED)
+  //  Submit handler (FIXED)
   const submitHandler = async (e) => {
     e.preventDefault();
 
