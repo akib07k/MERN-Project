@@ -1,0 +1,198 @@
+═══════════════════════════════════════════════════════════════
+                    PROJECT STRUCTURE OVERVIEW
+═══════════════════════════════════════════════════════════════
+
+📦 E-Commerce MERN Stack Project
+│
+├── 📂 backend/                          [Backend API Service]
+│   ├── 📂 config/
+│   │   └── db.js                        ✅ Uses process.env.MONGO_URI
+│   ├── 📂 controllers/
+│   │   ├── orderController.js
+│   │   ├── productController.js
+│   │   └── userController.js
+│   ├── 📂 middleware/
+│   │   ├── asyncHandler.js
+│   │   ├── authMiddleware.js
+│   │   └── errorMiddleware.js
+│   ├── 📂 models/
+│   │   ├── orderModel.js
+│   │   ├── productModel.js
+│   │   └── userModel.js
+│   ├── 📂 routes/
+│   │   ├── orderRoutes.js
+│   │   ├── productRoutes.js
+│   │   ├── uploadRoutes.js
+│   │   └── userRoutes.js
+│   ├── 📂 uploads/                      ⚠️ Ephemeral on Render
+│   │   └── [uploaded images]
+│   ├── 📂 utils/
+│   │   └── generateToken.js
+│   ├── .env                             🔧 MODIFIED (added comments)
+│   ├── .env.example                     ✨ NEW (template)
+│   ├── .gitignore                       ✅ Already correct
+│   ├── package.json                     ✅ Has correct scripts
+│   ├── seeder.js
+│   └── server.js                        🔧 MODIFIED (CORS fix)
+│
+├── 📂 frontend/                         [React Frontend]
+│   ├── 📂 public/
+│   │   ├── _redirects                   ✅ Already configured
+│   │   └── vite.svg
+│   ├── 📂 src/
+│   │   ├── 📂 components/
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Header.jsx
+│   │   │   ├── Loader.jsx
+│   │   │   ├── ProductCard.jsx
+│   │   │   └── Rating.jsx
+│   │   ├── 📂 pages/
+│   │   │   ├── AdminDashboardPage.jsx
+│   │   │   ├── CartPage.jsx
+│   │   │   ├── CheckoutPage.jsx
+│   │   │   ├── HomePage.jsx
+│   │   │   ├── LoginPage.jsx
+│   │   │   ├── OrderPage.jsx
+│   │   │   ├── ProductDetailsPage.jsx
+│   │   │   ├── ProductEditPage.jsx
+│   │   │   ├── ProfilePage.jsx
+│   │   │   ├── RegisterPage.jsx
+│   │   │   └── UserEditPage.jsx
+│   │   ├── 📂 store/
+│   │   │   ├── 📂 slices/
+│   │   │   │   ├── apiSlice.js
+│   │   │   │   ├── authSlice.js
+│   │   │   │   ├── cartSlice.js
+│   │   │   │   ├── ordersApiSlice.js
+│   │   │   │   ├── productsApiSlice.js
+│   │   │   │   └── usersApiSlice.js
+│   │   │   └── store.js
+│   │   ├── 📂 utils/
+│   │   │   └── toast.js
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── constants.js                 ✅ Uses env variable
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── .env                             🔧 MODIFIED (cleaned up)
+│   ├── .env.example                     ✨ NEW (template)
+│   ├── .gitignore                       ✅ Already correct
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package.json                     ✅ Has correct scripts
+│   ├── README.md
+│   ├── vite.config.js                   ✅ Already configured
+│   └── [other HTML files]
+│
+├── 📂 .git/                             [Git repository]
+├── 📂 .vscode/                          [VS Code settings]
+│
+├── 📄 ARCHITECTURE.md                   ✨ NEW - System diagrams
+├── 📄 CHANGES_SUMMARY.md                ✨ NEW - What changed
+├── 📄 DEPLOYMENT_CHECKLIST.md           ✨ NEW - Step-by-step checklist
+├── 📄 DEPLOYMENT_SUMMARY.md             ✨ NEW - Quick summary
+├── 📄 PROJECT_STRUCTURE.txt             ✨ NEW - This file
+├── 📄 QUICK_START.md                    ✨ NEW - 15-min guide ⭐
+├── 📄 README_DEPLOYMENT.md              ✨ NEW - Main documentation
+├── 📄 RENDER_DEPLOYMENT_GUIDE.md        ✨ NEW - Detailed guide
+├── 📄 RENDER_SETTINGS.txt               ✨ NEW - Quick reference
+├── 📄 TROUBLESHOOTING.md                ✨ NEW - Common issues
+│
+├── .gitignore                           ✅ Already correct
+├── package.json                         ✅ Root package (dev only)
+└── package-lock.json
+
+═══════════════════════════════════════════════════════════════
+                         LEGEND
+═══════════════════════════════════════════════════════════════
+
+✅ Already correct - No changes needed
+🔧 Modified - Updated for deployment
+✨ NEW - Created for deployment
+⚠️ Warning - Special consideration needed
+
+═══════════════════════════════════════════════════════════════
+                    FILES MODIFIED (3)
+═══════════════════════════════════════════════════════════════
+
+1. backend/server.js
+   └─ Fixed CORS to accept FRONTEND_URL from environment
+
+2. backend/.env
+   └─ Added comments and FRONTEND_URL placeholder
+
+3. frontend/.env
+   └─ Cleaned up comments
+
+═══════════════════════════════════════════════════════════════
+                    FILES CREATED (11)
+═══════════════════════════════════════════════════════════════
+
+Configuration Templates:
+├── backend/.env.example
+└── frontend/.env.example
+
+Deployment Guides:
+├── QUICK_START.md                       ⭐ START HERE
+├── RENDER_DEPLOYMENT_GUIDE.md
+├── DEPLOYMENT_CHECKLIST.md
+└── RENDER_SETTINGS.txt
+
+Technical Documentation:
+├── CHANGES_SUMMARY.md
+├── DEPLOYMENT_SUMMARY.md
+├── ARCHITECTURE.md
+├── TROUBLESHOOTING.md
+├── README_DEPLOYMENT.md
+└── PROJECT_STRUCTURE.txt (this file)
+
+═══════════════════════════════════════════════════════════════
+                    DEPLOYMENT SERVICES
+═══════════════════════════════════════════════════════════════
+
+Service 1: Backend (Render Web Service)
+┌─────────────────────────────────────────────────────────────┐
+│ Root Directory:    backend                                  │
+│ Build Command:     npm install                              │
+│ Start Command:     npm start                                │
+│                                                             │
+│ Environment Variables:                                      │
+│ • MONGO_URI                                                 │
+│ • JWT_SECRET                                                │
+│ • FRONTEND_URL                                              │
+│ • NODE_ENV                                                  │
+└─────────────────────────────────────────────────────────────┘
+
+Service 2: Frontend (Render Static Site)
+┌─────────────────────────────────────────────────────────────┐
+│ Root Directory:       frontend                              │
+│ Build Command:        npm install && npm run build          │
+│ Publish Directory:    dist                                  │
+│                                                             │
+│ Environment Variables:                                      │
+│ • VITE_API_URL                                              │
+└─────────────────────────────────────────────────────────────┘
+
+External Service: MongoDB Atlas
+┌─────────────────────────────────────────────────────────────┐
+│ • Free tier available                                       │
+│ • Network Access: 0.0.0.0/0                                 │
+│ • Connection string in MONGO_URI                            │
+└─────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════
+                    QUICK START
+═══════════════════════════════════════════════════════════════
+
+1. Set up MongoDB Atlas (5 min)
+2. Push code to GitHub (2 min)
+3. Deploy backend to Render (4 min)
+4. Deploy frontend to Render (4 min)
+5. Update backend CORS (1 min)
+6. Test application ✅
+
+Total Time: ~15-20 minutes
+
+See QUICK_START.md for detailed steps!
+
+═══════════════════════════════════════════════════════════════

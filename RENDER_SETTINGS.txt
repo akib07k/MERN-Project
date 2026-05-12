@@ -1,0 +1,87 @@
+═══════════════════════════════════════════════════════════════
+                    RENDER.COM DEPLOYMENT SETTINGS
+═══════════════════════════════════════════════════════════════
+
+📦 PROJECT TYPE: Full Stack (Backend + Frontend)
+🔧 REQUIRES: 2 separate Render services
+
+═══════════════════════════════════════════════════════════════
+                         BACKEND SERVICE
+═══════════════════════════════════════════════════════════════
+
+Service Type:        Web Service
+Runtime:             Node
+
+┌─────────────────────────────────────────────────────────────┐
+│ BUILD SETTINGS                                              │
+├─────────────────────────────────────────────────────────────┤
+│ Root Directory:    backend                                  │
+│ Build Command:     npm install                              │
+│ Start Command:     npm start                                │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ ENVIRONMENT VARIABLES (Required)                            │
+├─────────────────────────────────────────────────────────────┤
+│ MONGO_URI          mongodb+srv://user:pass@cluster.net/db   │
+│ JWT_SECRET         your-secret-key-here                     │
+│ FRONTEND_URL       https://your-frontend.onrender.com       │
+│ NODE_ENV           production                               │
+└─────────────────────────────────────────────────────────────┘
+
+Note: Add FRONTEND_URL after deploying frontend!
+
+═══════════════════════════════════════════════════════════════
+                        FRONTEND SERVICE
+═══════════════════════════════════════════════════════════════
+
+Service Type:        Static Site
+
+┌─────────────────────────────────────────────────────────────┐
+│ BUILD SETTINGS                                              │
+├─────────────────────────────────────────────────────────────┤
+│ Root Directory:    frontend                                 │
+│ Build Command:     npm install && npm run build             │
+│ Publish Directory: dist                                     │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ ENVIRONMENT VARIABLES (Required)                            │
+├─────────────────────────────────────────────────────────────┤
+│ VITE_API_URL       https://your-backend.onrender.com        │
+└─────────────────────────────────────────────────────────────┘
+
+Note: Use your actual backend URL from step 1!
+
+═══════════════════════════════════════════════════════════════
+                         DEPLOYMENT ORDER
+═══════════════════════════════════════════════════════════════
+
+1. Deploy BACKEND first
+   ↓
+2. Copy backend URL
+   ↓
+3. Deploy FRONTEND with backend URL in VITE_API_URL
+   ↓
+4. Copy frontend URL
+   ↓
+5. Update BACKEND with FRONTEND_URL environment variable
+   ↓
+6. Backend auto-redeploys
+   ↓
+7. Test application ✅
+
+═══════════════════════════════════════════════════════════════
+                      MONGODB ATLAS SETUP
+═══════════════════════════════════════════════════════════════
+
+1. Create free cluster at mongodb.com/cloud/atlas
+2. Create database user
+3. Get connection string
+4. Network Access → Add IP: 0.0.0.0/0 (Allow from anywhere)
+5. Replace in connection string:
+   - <username> with your username
+   - <password> with your password
+   - <dbname> with your database name
+
+═══════════════════════════════════════════════════════════════
